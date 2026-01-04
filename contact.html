@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyLearning | Join</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand brand-text" href="index.html">
+            Happy<span>Learning</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Join Us</a></li>
+            </ul>
+                <!-- Dark/Light Toggle -->
+    <button id="themeToggle" class="btn btn-outline-light btn-sm ms-3">🌙</button>
+
+        </div>
+    </div>
+</nav>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="container page-section">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <h2 class="text-center mb-3">Join HappyLearning</h2>
+
+            <img src="assets/join.jpg" class="img-fluid rounded mb-4" alt="Join HappyLearning">
+
+            <form id="contactForm" novalidate>
+
+                <!-- Full Name -->
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="fullname" class="form-control" placeholder="Enter your name">
+                    <small class="text-danger" id="nameError"></small>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                    <small class="text-danger" id="emailError"></small>
+                </div>
+
+                <!-- Phone -->
+                <div class="mb-3">
+                    <label class="form-label">Phone Number</label>
+                    <input type="text" id="phone" class="form-control" placeholder="10-digit mobile number">
+                    <small class="text-danger" id="phoneError"></small>
+                </div>
+
+                <!-- Message -->
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea id="message" class="form-control" rows="4" placeholder="Enter your message"></textarea>
+                    <small class="text-danger" id="messageError"></small>
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Submit</button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>HappyLearning © 2025 | Contact Us Anytime</p>
+</footer>
+
+<!-- ================= JAVASCRIPT VALIDATION ================= -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
+
+    // Clear previous errors
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("phoneError").textContent = "";
+    document.getElementById("messageError").textContent = "";
+
+    let isValid = true;
+
+    // ===== FULL NAME =====
+    if (name === "") {
+        document.getElementById("nameError").textContent = "Full name required *";
+        isValid = false;
+    }
+
+    // ===== EMAIL =====
+    if (email === "") {
+        document.getElementById("emailError").textContent = "Email required *";
+        isValid = false;
+    } else if (!emailRegex.test(email)) {
+        document.getElementById("emailError").textContent = "Invalid email";
+        isValid = false;
+    }
+
+    // ===== PHONE =====
+    if (phone === "") {
+        document.getElementById("phoneError").textContent = "Phone number required *";
+        isValid = false;
+    } else if (!phoneRegex.test(phone)) {
+        document.getElementById("phoneError").textContent = "Invalid phone number";
+        isValid = false;
+    }
+
+    // ===== MESSAGE =====
+    if (message === "") {
+        document.getElementById("messageError").textContent = "Message required *";
+        isValid = false;
+    }
+
+    // ===== SUCCESS =====
+    if (isValid) {
+        alert("Thank you for contacting HappyLearning!");
+        document.getElementById("contactForm").reset();
+    }
+});
+</script>
+
+<!--Light and dark toggle-->
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+const body = document.body;
+
+// Load saved theme
+if (localStorage.getItem("theme") === "light") {
+    body.classList.add("light-mode");
+    toggleBtn.textContent = "☀️";
+}
+
+toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("light-mode");
+
+    if (body.classList.contains("light-mode")) {
+        toggleBtn.textContent = "☀️";
+        localStorage.setItem("theme", "light");
+    } else {
+        toggleBtn.textContent = "🌙";
+        localStorage.setItem("theme", "dark");
+    }
+});
+</script>
+
+
+</body>
+</html>

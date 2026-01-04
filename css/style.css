@@ -1,0 +1,295 @@
+/* ================= GLOBAL THEME ================= */
+
+:root {
+    --bg-main: #0f0f14;
+    --bg-card: #181826;
+    --lilac: #c8a2ff;
+    --lilac-soft: #d8cfff;
+    --text-main: #f5f5f5;
+    --text-muted: #e0dcff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding-top: 70px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background-color: #0b0b10 !important;
+}
+
+.navbar .nav-link {
+    color: #d6d6ff;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: var(--lilac);
+}
+
+.navbar .nav-link.active {
+    color: var(--lilac) !important;
+    font-weight: 700;
+    border-bottom: 2px solid var(--lilac);
+}
+
+/* Brand */
+.brand-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+}
+
+.brand-text span {
+    color: var(--lilac);
+}
+
+/* ================= HERO CAROUSEL ================= */
+
+.hero-carousel img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.carousel-caption {
+    z-index: 2;
+    bottom: 35%;
+}
+
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+}
+
+/* ================= COURSES ================= */
+
+.course-card {
+    background: var(--bg-card);
+    color: var(--text-main);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(200, 162, 255, 0.3);
+}
+
+.course-card img {
+    border-radius: 16px 16px 0 0;
+}
+
+/* ================= WHY SECTION ================= */
+
+.why-section {
+    background: linear-gradient(135deg, #0f0f14, #181826);
+}
+
+.why-card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(200, 162, 255, 0.25);
+}
+
+.why-card h5 {
+    color: var(--lilac);
+    font-weight: 700;
+}
+
+.why-card p {
+    color: var(--text-muted);
+}
+
+/* ================= PAGE SECTIONS ================= */
+
+.page-section {
+    padding-top: 120px;
+    min-height: 60vh;
+}
+
+/* ================= CONTACT / JOIN FORM ================= */
+
+.page-section .col-md-6 {
+    background: var(--bg-card);
+    padding: 32px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(200, 162, 255, 0.3);
+}
+
+.page-section h2 {
+    color: var(--lilac);
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-label {
+    color: var(--lilac-soft);
+    font-weight: 600;
+}
+
+.form-control {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 1px solid #6f42c1;
+    border-radius: 12px;
+}
+
+.form-control::placeholder {
+    color: #a39bc9;
+}
+
+.form-control:focus {
+    border-color: var(--lilac);
+    box-shadow: 0 0 0 0.2rem rgba(200, 162, 255, 0.3);
+}
+
+/* Errors */
+.text-danger {
+    color: #ff6b6b !important;
+    font-size: 0.85rem;
+}
+
+/* Button */
+.btn-success {
+    background: linear-gradient(135deg, #6f42c1, var(--lilac));
+    border: none;
+    border-radius: 14px;
+    font-weight: 600;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #5a34a1, #b48cff);
+}
+
+/* Images */
+.page-section img {
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(200, 162, 255, 0.25);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    background: #0b0b10;
+    color: var(--lilac-soft);
+    text-align: center;
+    padding: 14px 0;
+    margin-top: 50px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    .page-section .col-md-6 {
+        padding: 22px;
+    }
+}
+
+
+
+/* ================= LIGHT MODE ================= */
+
+.light-mode {
+    --bg-main: #f8f9fc;
+    --bg-card: #ffffff;
+    --text-main: #222222;
+    --text-muted: #555555;
+}
+
+/* Navbar in light mode */
+.light-mode .navbar {
+    background-color: #ffffff !important;
+}
+
+.light-mode .navbar .nav-link {
+    color: #333;
+}
+
+.light-mode .navbar .nav-link.active {
+    color: #6f42c1 !important;
+    border-bottom: 2px solid #6f42c1;
+}
+
+/* Footer in light mode */
+.light-mode .footer {
+    background: #f1f1f8;
+    color: #333;
+}
+
+/* ================= BRAND FIX FOR LIGHT MODE ================= */
+
+.light-mode .brand-text {
+    color: #222222 !important;   /* Happy = dark text */
+}
+
+.light-mode .brand-text span {
+    color: #6f42c1;              /* Learning = lilac */
+}
+
+.brand-text {
+    transition: color 0.3s ease;
+}
+
+/*Course filter button polish */
+.course-filters .btn {
+    border-color: #c8a2ff;
+    color: #c8a2ff;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.course-filters .btn.active,
+.course-filters .btn:hover {
+    background-color: #c8a2ff;
+    color: #0f0f14;
+}
+
+/* ================= WHY SECTION - LIGHT MODE FIX ================= */
+
+.light-mode .why-section {
+    background: linear-gradient(135deg, #f4f2fb, #ffffff);
+}
+
+.light-mode .why-card {
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(111, 66, 193, 0.2);
+}
+
+.light-mode .why-card h5 {
+    color: #6f42c1; /* lilac */
+}
+
+.light-mode .why-card p {
+    color: #333333;
+}
+
+
+
+
