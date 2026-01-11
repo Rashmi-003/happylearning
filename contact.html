@@ -90,92 +90,11 @@
 </footer>
 
 <!-- ================= JAVASCRIPT VALIDATION ================= -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 
-    const name = document.getElementById("fullname").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^[0-9]{10}$/;
-
-    // Clear previous errors
-    document.getElementById("nameError").textContent = "";
-    document.getElementById("emailError").textContent = "";
-    document.getElementById("phoneError").textContent = "";
-    document.getElementById("messageError").textContent = "";
-
-    let isValid = true;
-
-    // ===== FULL NAME =====
-    if (name === "") {
-        document.getElementById("nameError").textContent = "Full name required *";
-        isValid = false;
-    }
-
-    // ===== EMAIL =====
-    if (email === "") {
-        document.getElementById("emailError").textContent = "Email required *";
-        isValid = false;
-    } else if (!emailRegex.test(email)) {
-        document.getElementById("emailError").textContent = "Invalid email";
-        isValid = false;
-    }
-
-    // ===== PHONE =====
-    if (phone === "") {
-        document.getElementById("phoneError").textContent = "Phone number required *";
-        isValid = false;
-    } else if (!phoneRegex.test(phone)) {
-        document.getElementById("phoneError").textContent = "Invalid phone number";
-        isValid = false;
-    }
-
-    // ===== MESSAGE =====
-    if (message === "") {
-        document.getElementById("messageError").textContent = "Message required *";
-        isValid = false;
-    }
-
-    // ===== SUCCESS =====
-    if (isValid) {
-        alert("Thank you for contacting HappyLearning!");
-        document.getElementById("contactForm").reset();
-    }
-});
-</script>
-
-<!--Light and dark toggle-->
-
-<script>
-const toggleBtn = document.getElementById("themeToggle");
-const body = document.body;
-
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
-    body.classList.add("light-mode");
-    toggleBtn.textContent = "☀️";
-}
-
-toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-
-    if (body.classList.contains("light-mode")) {
-        toggleBtn.textContent = "☀️";
-        localStorage.setItem("theme", "light");
-    } else {
-        toggleBtn.textContent = "🌙";
-        localStorage.setItem("theme", "dark");
-    }
-});
-</script>
 
 
 </body>
 </html>
-
