@@ -43,6 +43,7 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     color: #ffffff !important;
+    transition: color 0.3s ease;
 }
 
 .brand-text span {
@@ -212,84 +213,88 @@ body {
     }
 }
 
-
-
-/* ================= LIGHT MODE ================= */
+/* ================= LIGHT MODE (BABY PINK + LILAC) ================= */
 
 .light-mode {
-    --bg-main: #f8f9fc;
+    --bg-main: #fff4fb;
     --bg-card: #ffffff;
-    --text-main: #222222;
-    --text-muted: #555555;
+    --text-main: #3a2a4a;
+    --text-muted: #6b5a7a;
+    --lilac: #b48cff;
 }
 
-/* Navbar in light mode */
+/* Navbar */
 .light-mode .navbar {
-    background-color: #ffffff !important;
+    background: linear-gradient(135deg, #ffe6f3, #f3e8ff) !important;
 }
 
 .light-mode .navbar .nav-link {
-    color: #333;
+    color: #3a2a4a;
 }
 
 .light-mode .navbar .nav-link.active {
-    color: #6f42c1 !important;
-    border-bottom: 2px solid #6f42c1;
+    color: #8b5cf6 !important;
+    border-bottom: 2px solid #8b5cf6;
 }
 
-/* Footer in light mode */
-.light-mode .footer {
-    background: #f1f1f8;
-    color: #333;
-}
-
-/* ================= BRAND FIX FOR LIGHT MODE ================= */
-
+/* Brand */
 .light-mode .brand-text {
-    color: #222222 !important;   /* Happy = dark text */
+    color: #3a2a4a !important;
 }
 
 .light-mode .brand-text span {
-    color: #6f42c1;              /* Learning = lilac */
+    color: #8b5cf6;
 }
 
-.brand-text {
-    transition: color 0.3s ease;
+/* Footer */
+.light-mode .footer {
+    background: linear-gradient(135deg, #fbe7f2, #efe7ff);
+    color: #3a2a4a;
 }
 
-/*Course filter button polish */
+/* Why section */
+.light-mode .why-section {
+    background: linear-gradient(135deg, #ffeaf5, #f4edff);
+}
+
+.light-mode .why-card {
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(180, 140, 255, 0.25);
+}
+
+.light-mode .why-card h5 {
+    color: #8b5cf6;
+}
+
+.light-mode .why-card p {
+    color: #3a2a4a;
+}
+
+/* ================= NAVBAR TOGGLER FIX ================= */
+
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.light-mode .navbar-toggler {
+    border-color: #3a2a4a;
+}
+
+.light-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(58,42,74,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ================= COURSE FILTER BUTTONS ================= */
+
 .course-filters .btn {
-    border-color: #c8a2ff;
-    color: #c8a2ff;
+    border-color: var(--lilac);
+    color: var(--lilac);
     margin: 5px;
     border-radius: 20px;
 }
 
 .course-filters .btn.active,
 .course-filters .btn:hover {
-    background-color: #c8a2ff;
+    background-color: var(--lilac);
     color: #0f0f14;
 }
-
-/* ================= WHY SECTION - LIGHT MODE FIX ================= */
-
-.light-mode .why-section {
-    background: linear-gradient(135deg, #f4f2fb, #ffffff);
-}
-
-.light-mode .why-card {
-    background: #ffffff;
-    box-shadow: 0 8px 20px rgba(111, 66, 193, 0.2);
-}
-
-.light-mode .why-card h5 {
-    color: #6f42c1; /* lilac */
-}
-
-.light-mode .why-card p {
-    color: #333333;
-}
-
-
-
-
